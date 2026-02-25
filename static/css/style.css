@@ -213,58 +213,112 @@ html {
 
 /* 项目负责人 */
 .leader-section {
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
 }
 
 .leader-card {
     display: flex;
-    gap: 2rem;
+    gap: 2.5rem;
     background: var(--bg-white);
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: var(--shadow);
+    padding: 3rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     align-items: flex-start;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(37, 99, 235, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.leader-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+}
+
+.leader-card:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    transform: translateY(-2px);
 }
 
 .leader-avatar {
     flex-shrink: 0;
+    position: relative;
 }
 
 .avatar-placeholder {
-    width: 120px;
-    height: 120px;
+    width: 140px;
+    height: 140px;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: 700;
     color: white;
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+    transition: all 0.3s ease;
+    border: 4px solid white;
+}
+
+.leader-card:hover .avatar-placeholder {
+    transform: scale(1.05);
+    box-shadow: 0 15px 35px rgba(37, 99, 235, 0.4);
+}
+
+.leader-info {
+    flex: 1;
 }
 
 .leader-info h4 {
-    font-size: 1.8rem;
+    font-size: 2rem;
     margin-bottom: 0.5rem;
+    color: var(--text-dark);
+    font-weight: 700;
+    letter-spacing: -0.5px;
 }
 
 .leader-title {
-    color: var(--text-light);
+    color: var(--primary-color);
     font-size: 1.1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(124, 58, 237, 0.1));
+    border-radius: 6px;
+    display: inline-block;
 }
 
 .leader-info p {
-    margin-bottom: 0.8rem;
+    margin-bottom: 1rem;
     line-height: 1.8;
+    color: var(--text-dark);
+    font-size: 1rem;
+}
+
+.leader-info p strong {
+    color: var(--text-dark);
+    font-weight: 600;
+    display: inline-block;
+    min-width: 90px;
 }
 
 .leader-info a {
     color: var(--primary-color);
     text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 2px 4px;
+    border-radius: 4px;
 }
 
 .leader-info a:hover {
+    background: rgba(37, 99, 235, 0.1);
     text-decoration: underline;
 }
 
