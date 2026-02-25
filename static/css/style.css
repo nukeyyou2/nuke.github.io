@@ -322,6 +322,68 @@ html {
     text-decoration: underline;
 }
 
+/* 项目导师 */
+.mentors-section {
+    margin-bottom: 4rem;
+}
+
+.mentors-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.mentors-card {
+    display: flex;
+    gap: 2.5rem;
+    background: var(--bg-white);
+    padding: 3rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    align-items: flex-start;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(37, 99, 235, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.mentors-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-color), var(--secondary-color));
+}
+
+.mentors-card:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    transform: translateY(-2px);
+}
+
+.mentor-avatar {
+    width: 140px;
+    height: 140px;
+    background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: white;
+    box-shadow: 0 10px 25px rgba(124, 58, 237, 0.3);
+    transition: all 0.3s ease;
+    border: 4px solid white;
+    flex-shrink: 0;
+}
+
+.mentors-card:hover .mentor-avatar {
+    transform: scale(1.05);
+    box-shadow: 0 15px 35px rgba(124, 58, 237, 0.4);
+}
+
 /* 团队成员 */
 .members-section {
     margin-bottom: 3rem;
@@ -650,12 +712,14 @@ html {
         font-size: 2rem;
     }
 
-    .leader-card {
+    .leader-card,
+    .mentors-card {
         flex-direction: column;
         text-align: center;
     }
 
-    .avatar-placeholder {
+    .avatar-placeholder,
+    .mentor-avatar {
         margin: 0 auto;
     }
 
